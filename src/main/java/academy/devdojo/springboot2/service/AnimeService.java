@@ -5,15 +5,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class AnimeService {
-    private static List<Anime> animes;
+    /*private static List<Anime> animes;
 
     static {
         animes = List.of(new Anime(1L, "Boku No Hero"), new Anime(2L, "Bersek"));
+    }*/
+
+    private static List<Anime> animes;
+
+    static {
+        animes = new ArrayList<>(List.of(new Anime(1L, "BD2"), new Anime(2L, "Bersek")));
     }
 
     public List<Anime> listAll() {
